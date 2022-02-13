@@ -2,7 +2,6 @@
 
 console.log("Hack the planet!");
 
-//document.onload = main();
 window.addEventListener ("load", main, false);
 
 async function getTabs() {
@@ -12,18 +11,17 @@ async function getTabs() {
     return res;
 }
 
-function handleMessage(request, sender, sendResponse) {
-    console.log("message from the content script: " + request.greeting);
-    sendresponse({response: "response from background script"});
+function handleMessage(request, sender) {
+  console.log(`content script sent a message: ${request.content}`);
 }
 
-browser.runtime.onMessage.addListener(handleMessage);
 async function main() {
 
+    browser.runtime.onMessage.addListener(handleMessage);
     const tabs = await getTabs();
     console.log(tabs);
-    //const currentTab = await getCurrent();
-    //console.log(currentTab);
+
+
 }
 
 
