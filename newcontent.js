@@ -11,7 +11,7 @@ function notifyBackgroundPage(e) {
 function getCurrent(e){
     const currentTab = browser.tabs.getCurrent();
     browser.runtime.sendMessage({
-        tabs: currentTab
+        tabs: "currentTab"
     });
 }
 

@@ -12,7 +12,7 @@ async function getTabs() {
 }
 
 function handleMessage(request, sender) {
-  console.log(`content script sent a message: ${request.content}`);
+  console.log(`content script sent a message: ${request.greeting}`);
 }
 
 async function main() {
