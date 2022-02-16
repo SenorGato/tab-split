@@ -18,6 +18,7 @@ function handleMessage(request, sender) {
 async function main() {
 
     browser.runtime.onMessage.addListener(handleMessage);
+    console.log(browser.runtime.onMessage.hasListener(handleMessage));
     const tabs = await getTabs();
     console.log(tabs);
 
